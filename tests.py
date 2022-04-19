@@ -11,7 +11,7 @@ from tools import utilities
 test_data = utilities.prepare_test_data("data/test_data.json")
 
 
-class AccountCreationTest(unittest.TestCase):
+class DemoWebsiteTest(unittest.TestCase):
     def setUp(self):
         s = Service(ChromeDriverManager().install())
         options = Options()
