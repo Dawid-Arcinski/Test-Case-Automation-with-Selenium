@@ -17,7 +17,7 @@ class AccountCreationTest(unittest.TestCase):
         options = Options()
         options.headless = True
         self.driver = webdriver.Chrome(service=s, options=options)
-        self.driver.get("https://www.saucedemo.com/")
+        self.driver.get(test_data["base_url"])
 
     def tearDown(self):
         self.driver.quit()
