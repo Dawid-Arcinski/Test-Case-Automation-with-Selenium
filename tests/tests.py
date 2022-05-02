@@ -8,7 +8,7 @@ from random import choice
 from tools import utilities
 
 # TEST DATA:
-test_data = utilities.prepare_test_data("data/test_data.json")
+test_data = utilities.prepare_test_data("../data/test_data.json")
 
 
 class DemoWebsiteTest(unittest.TestCase):

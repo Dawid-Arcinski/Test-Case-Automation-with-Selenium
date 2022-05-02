@@ -4,7 +4,7 @@ from faker import Faker
 
 
 def prepare_test_data(path):
-    fake = Faker()
+    fake = Faker(locale="pl_PL")
     test_data = json.load(open(path))
     test_data.update({"wrong_password": fake.password(), "first_name": fake.first_name(), "last_name": fake.last_name(),
                       "postal_code": fake.postcode()})
