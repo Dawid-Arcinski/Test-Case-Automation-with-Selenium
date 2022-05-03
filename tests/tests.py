@@ -22,7 +22,7 @@ class DemoWebsiteTest(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()
 
-    def test_case_1(self):
+    def loging_in_using_correct_credentials(self):
         """TITLE: loging in using correct credentials
 
         PRECONDITIONS:
@@ -49,8 +49,8 @@ class DemoWebsiteTest(unittest.TestCase):
         shopping_cart_button = driver.find_element(By.ID, "shopping_cart_container")
         assert shopping_cart_button.is_displayed() and shopping_cart_button.is_enabled()
 
-    def test_case_2(self):
-        """ TITLE: attempting to log in using incorrect password
+    def loging_in_using_incorrect_credentials(self):
+        """ TITLE: attempting to log in using incorrect credentials
 
         PRECONDITIONS:
         1. browser opened on website https://www.saucedemo.com/
@@ -72,12 +72,12 @@ class DemoWebsiteTest(unittest.TestCase):
         error_message = driver.find_element(By.TAG_NAME, "h3")
         assert error_message.text == "Epic sadface: Username and password do not match any user in this service"
 
-    def test_case_3(self):
+    def buying_random_item_from_store(self):
         """ TITLE: buying random item from the store
 
         PRECONDITIONS:
         1. browser opened on website https://www.saucedemo.com/
-        2. user logged in
+        2. user is logged in
 
         EXPECTED RESULTS:
         1. after completing purchase website displays message 'THANK YOU FOR YOUR ORDER'"""
@@ -143,12 +143,12 @@ class DemoWebsiteTest(unittest.TestCase):
         assert message_top.text == test_data["thank_you_header"]
         assert message_bottom.text == test_data["thank_you_message"]
 
-    def test_case_4(self):
-        """ TITLE: attempting to add multiple random items from the store to shopping cart
+    def checking_price_calculation_module(self):
+        """ TITLE: checking whether shopping cart module of the website calculates correct aggregated prices
 
         PRECONDITIONS:
         1. browser opened on website https://www.saucedemo.com/
-        2. user logged in
+        2. user is logged in
 
         EXPECTED RESULTS:
         1. names of items selected in the store correspond to names of items displayed on CHECKOUT OVERVIEW page
