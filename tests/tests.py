@@ -22,7 +22,7 @@ class DemoWebsiteTest(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()
 
-    def loging_in_using_correct_credentials(self):
+    def test_loging_in_using_correct_credentials(self):
         """TITLE: loging in using correct credentials
 
         PRECONDITIONS:
@@ -49,7 +49,7 @@ class DemoWebsiteTest(unittest.TestCase):
         shopping_cart_button = driver.find_element(By.ID, "shopping_cart_container")
         assert shopping_cart_button.is_displayed() and shopping_cart_button.is_enabled()
 
-    def loging_in_using_incorrect_credentials(self):
+    def test_loging_in_using_incorrect_credentials(self):
         """ TITLE: attempting to log in using incorrect credentials
 
         PRECONDITIONS:
@@ -72,12 +72,12 @@ class DemoWebsiteTest(unittest.TestCase):
         error_message = driver.find_element(By.TAG_NAME, "h3")
         assert error_message.text == "Epic sadface: Username and password do not match any user in this service"
 
-    def buying_random_item_from_store(self):
+    def test_buying_random_item_from_store(self):
         """ TITLE: buying random item from the store
 
         PRECONDITIONS:
         1. browser opened on website https://www.saucedemo.com/
-        2. user is logged in
+        2. user logged in
 
         EXPECTED RESULTS:
         1. after completing purchase website displays message 'THANK YOU FOR YOUR ORDER'"""
@@ -86,8 +86,7 @@ class DemoWebsiteTest(unittest.TestCase):
         driver = self.driver
         utilities.log_user_in(driver, test_data["correct_login"], test_data["correct_password"])
         # 1. choose random item to buy and save its name to variable
-        item_list = driver.find_elements(By.CLASS_NAME, "inventory_item")
-        item = choice(item_list)
+        item = choice(driver.find_elements(By.CLASS_NAME, "inventory_item"))
         item_name = item.find_element(By.CLASS_NAME, "inventory_item_name").text
         add_to_cart_button = item.find_element(By.CLASS_NAME, "pricebar").find_element(By.TAG_NAME, "button")
         # 2. verify whether "ADD TO CART" button is displayed and enabled, then click it
@@ -143,12 +142,13 @@ class DemoWebsiteTest(unittest.TestCase):
         assert message_top.text == test_data["thank_you_header"]
         assert message_bottom.text == test_data["thank_you_message"]
 
-    def checking_price_calculation_module(self):
-        """ TITLE: checking whether shopping cart module of the website calculates correct aggregated prices
+    def test_checking_pricing_module(self):
+        """ TITLE: checking whether pricing module of the website calculates correct aggregated prices for shopping
+        carts with multiple store items
 
         PRECONDITIONS:
         1. browser opened on website https://www.saucedemo.com/
-        2. user is logged in
+        2. user logged in
 
         EXPECTED RESULTS:
         1. names of items selected in the store correspond to names of items displayed on CHECKOUT OVERVIEW page
