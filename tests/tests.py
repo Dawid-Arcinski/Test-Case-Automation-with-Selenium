@@ -187,3 +187,7 @@ class DemoWebsiteTest(unittest.TestCase):
         checkout_value = sum(
             [utilities.get_item_price(item) for item in driver.find_elements(By.CLASS_NAME, "cart_item")])
         assert shopping_cart_value == checkout_value
+
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)
