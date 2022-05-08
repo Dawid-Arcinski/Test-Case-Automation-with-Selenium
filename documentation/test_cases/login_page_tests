@@ -1,0 +1,42 @@
+TC 001: loging in using correct credentials
+
+PRECONDITIONS:
+1. browser opened on website https://www.saucedemo.com/
+
+STEPS:
+1. enter correct username
+2. enter correct password
+3. click login button
+
+EXPECTED RESULTS:
+1. user is logged in
+
+
+TC 002: loging in using wrong username
+
+PRECONDITIONS:
+1. browser opened on website https://www.saucedemo.com/
+
+STEPS:
+1. enter wrong username
+2. enter correct password
+3. click login button
+
+EXPECTED RESULTS:
+1. user is not logged in
+2. webpage displays message 'Epic sadface: Username and password do not match any user in this service'
+
+
+TC 003: loging in using wrong password
+
+PRECONDITIONS:
+1. browser opened on website https://www.saucedemo.com/
+
+STEPS:
+1. enter correct username
+2. enter wrong password
+3. click login button
+
+EXPECTED RESULTS:
+1. user is not logged in
+2. webpage displays message 'Epic sadface: Username and password do not match any user in this service'

@@ -1,21 +1,21 @@
 from selenium.webdriver.common.by import By
 import json
 from faker import Faker
+from pages.locators import LoginPageLocators
 
 
 def prepare_test_data(path):
     fake = Faker(locale="pl_PL")
     test_data = json.load(open(path))
-    test_data.update({"wrong_password": fake.password(), "first_name": fake.first_name(), "last_name": fake.last_name(),
+    test_data.update({"wrong_password": fake.password(), "wrong_username": fake.user_name(), "first_name": fake.first_name(), "last_name": fake.last_name(),
                       "postal_code": fake.postcode()})
-
     return test_data
 
 
 def log_user_in(driver, login, password):
-    driver.find_element(By.ID, "user-name").send_keys(login)
-    driver.find_element(By.ID, "password").send_keys(password)
-    driver.find_element(By.ID, "login-button").click()
+    driver.find_element(*LoginPageLocators.username).send_keys(login)
+    driver.find_element(*LoginPageLocators.password).send_keys(password)
+    driver.find_element(*LoginPageLocators.login_button).click()
 
 
 def add_item(element):
