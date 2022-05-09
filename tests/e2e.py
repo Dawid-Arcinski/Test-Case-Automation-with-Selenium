@@ -1,4 +1,3 @@
-# @unittest.skip
 #     def test_buying_random_item_from_store(self):
 #         """ TITLE: buying random item from the store
 #

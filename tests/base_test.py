@@ -8,7 +8,7 @@ from tools.test_tools import prepare_test_data
 
 class BaseTest(unittest.TestCase):
     def setUp(self):
-        self.test_data = prepare_test_data("../data/test_data.json")
+        self.test_data = prepare_test_data("data/test_data.json")
         s = Service(ChromeDriverManager().install())
         options = Options()
         options.headless = True
