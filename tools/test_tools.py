@@ -18,11 +18,24 @@ def log_user_in(driver, login, password):
     driver.find_element(*LoginPageLocators.login_button).click()
 
 
-def add_item(element):
-    element.find_element(By.CLASS_NAME, "pricebar").find_element(By.TAG_NAME, "button").click()
+def get_sorted_list(dictionary, option="k", order="asc"):
+    result = extract_data(dictionary, option)
+    result.sort()
+    if order == "desc":
+        return result[::-1]
+    return result
 
 
-def fill_out_form(driver, first_name, last_name, postal_code):
-    driver.find_element(By.ID, "first-name").send_keys(first_name)
-    driver.find_element(By.ID, "last-name").send_keys(last_name)
-    driver.find_element(By.ID, "postal-code").send_keys(postal_code)
+def extract_data(dictionary, option="k"):
+    result = dictionary.values() if option == "v" else dictionary.keys()
+    return list(result)
+
+
+# def add_item(element):
+#     element.find_element(By.CLASS_NAME, "pricebar").find_element(By.TAG_NAME, "button").click()
+#
+#
+# def fill_out_form(driver, first_name, last_name, postal_code):
+#     driver.find_element(By.ID, "first-name").send_keys(first_name)
+#     driver.find_element(By.ID, "last-name").send_keys(last_name)
+#     driver.find_element(By.ID, "postal-code").send_keys(postal_code)

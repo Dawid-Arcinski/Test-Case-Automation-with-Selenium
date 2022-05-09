@@ -11,6 +11,7 @@ class LoginPageLocators:
 class PrimaryHeaderLocators:
     menu = (By.ID, "react-burger-menu-btn")
     menu_logout_link = (By.ID, "logout_sidebar_link")
+    shopping_cart_button = (By.CLASS_NAME, "shopping_cart_link")
 
 
 class ProductsPageLocators:
@@ -23,3 +24,7 @@ class ProductsPageLocators:
     sort_za_option = "Name (Z to A)"
     sort_low_high_option = "Price (low to high)"
     sort_high_low_option = "Price (high to low)"
+
+
+class YourCartLocators:
+    cart_item = (By.CLASS_NAME, "cart_item")
