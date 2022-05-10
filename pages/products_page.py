@@ -1,10 +1,10 @@
-from pages.base_page import BasePage
+from pages.primary_header import PrimaryHeader
 from pages.locators import PrimaryHeaderLocators
 from pages.locators import ProductsPageLocators
 from selenium.webdriver.support.ui import Select
 
 
-class ProductsPage(BasePage):
+class ProductsPage(PrimaryHeader):
 
     def __init__(self, driver):
         super().__init__(driver)

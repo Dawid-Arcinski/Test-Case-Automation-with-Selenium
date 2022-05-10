@@ -9,3 +9,8 @@ class LoginPage(BasePage):
         self.username = self.driver.find_element(*LoginPageLocators.username)
         self.password = self.driver.find_element(*LoginPageLocators.password)
         self.login_button = self.driver.find_element(*LoginPageLocators.login_button)
+
+    def log_user_in(self, login, password):
+        self.username.send_keys(login)
+        self.password.send_keys(password)
+        self.login_button.click()

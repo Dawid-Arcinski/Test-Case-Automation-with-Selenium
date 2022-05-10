@@ -1,4 +1,3 @@
-from selenium.webdriver.common.by import By
 import json
 from faker import Faker
 from pages.locators import LoginPageLocators
@@ -29,7 +28,7 @@ def extract_data(dictionary, option="k"):
     result = dictionary.values() if option == "v" else dictionary.keys()
     return list(result)
 
-#
+
 #
 # def fill_out_form(driver, first_name, last_name, postal_code):
 #     driver.find_element(By.ID, "first-name").send_keys(first_name)
