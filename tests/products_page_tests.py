@@ -1,6 +1,8 @@
+from random import choice
 from tests.base_test import BaseTest
-from tools import test_tools
 from pages.products_page import ProductsPage
+from pages.locators import PrimaryHeaderLocators
+from tools import test_tools
 from tools.test_tools import get_sorted_list, extract_data
 
 
@@ -45,3 +47,11 @@ class ProductsPageTests(BaseTest):
         products_page.refresh_inventory()
         sorted_items = extract_data(products_page.process_inventory(), "v")
         self.assertEqual(products_prices, sorted_items)
+
+    def test_tc005_adding_random_store_item_to_cart(self):
+        driver = self.driver
+        test_tools.log_user_in(driver, self.test_data["correct_username"], self.test_data["correct_password"])
+        products_page = ProductsPage(driver)
+        item = choice(products_page.inventory)
+        ProductsPage.add_to_cart(item)
+        driver.find_element(*PrimaryHeaderLocators.shopping_cart_button).click()

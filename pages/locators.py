@@ -18,6 +18,7 @@ class ProductsPageLocators:
     store_item = (By.CLASS_NAME, "inventory_item")
     store_item_name = (By.CLASS_NAME, "inventory_item_name")
     store_item_price = (By.CLASS_NAME, "inventory_item_price")
+    add_to_cart_button = (By.TAG_NAME, "button")
 
     sort_button = (By.TAG_NAME, "select")
     sort_az_option = "Name (A to Z)"

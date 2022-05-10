@@ -1,4 +1,4 @@
-TC 001: loging in using correct credentials
+TC001: loging in using correct credentials
 
 PRECONDITIONS:
 1. browser opened on website https://www.saucedemo.com/
@@ -12,7 +12,7 @@ EXPECTED RESULTS:
 1. user is logged in
 
 
-TC 002: loging in using wrong username
+TC002: loging in using wrong username
 
 PRECONDITIONS:
 1. browser opened on website https://www.saucedemo.com/
@@ -27,7 +27,7 @@ EXPECTED RESULTS:
 2. webpage displays message 'Epic sadface: Username and password do not match any user in this service'
 
 
-TC 003: loging in using wrong password
+TC003: loging in using wrong password
 
 PRECONDITIONS:
 1. browser opened on website https://www.saucedemo.com/

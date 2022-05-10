@@ -1,4 +1,4 @@
-TC 001: sorting store items alphabetically in ascending order
+TC001: sorting store items alphabetically in ascending order
 
 PRECONDITIONS:
 1. browser opened on website https://www.saucedemo.com/
@@ -12,7 +12,7 @@ EXPECTED RESULTS:
 1. products are sorted alphabetically in ascending order
 
 
-TC 002: sorting store items alphabetically in descending order
+TC002: sorting store items alphabetically in descending order
 
 PRECONDITIONS:
 1. browser opened on website https://www.saucedemo.com/
@@ -26,7 +26,7 @@ EXPECTED RESULTS:
 1. products are sorted alphabetically in descending order
 
 
-TC 003: sorting store items' prices in ascending order
+TC003: sorting store items' prices in ascending order
 
 PRECONDITIONS:
 1. browser opened on website https://www.saucedemo.com/
@@ -40,7 +40,7 @@ EXPECTED RESULTS:
 1. products' prices are sorted in ascending order
 
 
-TC 004: sorting store items' prices in descending order
+TC004: sorting store items' prices in descending order
 
 PRECONDITIONS:
 1. browser opened on website https://www.saucedemo.com/
@@ -52,3 +52,10 @@ STEPS:
 
 EXPECTED RESULTS:
 1. products' prices are sorted in descending order
+
+
+TC005: adding random store item to cart
+
+PRECONDITIONS:
+1. browser opened on website https://www.saucedemo.com/
+2. user logged in

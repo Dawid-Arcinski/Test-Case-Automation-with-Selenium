@@ -23,18 +23,22 @@ class ProductsPage(BasePage):
     def process_inventory(self):
         products = {}
         for item in self.inventory:
-            products.update({get_item_name(item): get_item_price(item)})
+            products.update({ProductsPage.get_item_name(item): ProductsPage.get_item_price(item)})
         return products
 
     def sort_inventory(self, option):
         self.sort_button.select_by_visible_text(option)
 
+    @staticmethod
+    def add_to_cart(item):
+        item.find_element(*ProductsPageLocators.add_to_cart_button).click()
 
-def get_item_name(item):
-    return item.find_element(*ProductsPageLocators.store_item_name).text
+    @staticmethod
+    def get_item_name(item):
+        return item.find_element(*ProductsPageLocators.store_item_name).text
 
-
-def get_item_price(item):
-    item_price = "".join([c for c in item.find_element(*ProductsPageLocators.store_item_price).text if
-                          c.isdigit() or c == "."])
-    return float(item_price)
+    @staticmethod
+    def get_item_price(item):
+        item_price = "".join([c for c in item.find_element(*ProductsPageLocators.store_item_price).text if
+                              c.isdigit() or c == "."])
+        return float(item_price)
