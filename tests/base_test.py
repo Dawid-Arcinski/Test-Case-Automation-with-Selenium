@@ -11,8 +11,9 @@ class BaseTest(unittest.TestCase):
         self.test_data = prepare_test_data("data/test_data.json")
         s = Service(ChromeDriverManager().install())
         options = Options()
-        options.headless = True
+        # options.headless = True
         self.driver = webdriver.Chrome(service=s, options=options)
+        self.driver.implicitly_wait(10)
         self.driver.get(self.test_data["base_url"])
 
     def tearDown(self):

@@ -5,6 +5,9 @@ from pages.locators import PrimaryHeaderLocators
 class PrimaryHeader(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
-        self.menu = self.driver.find_element(*PrimaryHeaderLocators.menu)
-        self.logout_link = self.driver.find_element(*PrimaryHeaderLocators.menu_logout_link)
-        self.shopping_cart_button = self.driver.find_element(*PrimaryHeaderLocators.shopping_cart_button)
+        self.menu = self.driver.find_element(*PrimaryHeaderLocators.menu_btn)
+        self.shopping_cart_button = self.driver.find_element(*PrimaryHeaderLocators.shopping_cart_btn)
+
+    def get_cart_counter(self):
+        pass
+

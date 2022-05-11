@@ -1,6 +1,5 @@
 from pages.login_page import LoginPage
 from tests.base_test import BaseTest
-from tools import test_tools
 from pages.locators import LoginPageLocators
 from pages.locators import PrimaryHeaderLocators
 
@@ -11,8 +10,8 @@ class LoginPageTest(BaseTest):
         driver = self.driver
         login_page = LoginPage(driver)
         login_page.log_user_in(self.test_data["correct_username"], self.test_data["correct_password"])
-        driver.find_element(*PrimaryHeaderLocators.menu).click()
-        logout_link = driver.find_element(*PrimaryHeaderLocators.menu_logout_link)
+        driver.find_element(*PrimaryHeaderLocators.menu_btn).click()
+        logout_link = driver.find_element(*PrimaryHeaderLocators.logout_link)
         assert logout_link.accessible_name == self.test_data["logout_label"]
 
     def test_tc002_loging_in_using_wrong_username(self):
