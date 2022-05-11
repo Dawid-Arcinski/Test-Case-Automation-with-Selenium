@@ -1,5 +1,3 @@
-import unittest
-
 from pages.login_page import LoginPage
 from tests.base_test import BaseTest
 from pages.locators import LoginPageLocators

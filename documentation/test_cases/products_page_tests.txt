@@ -1,8 +1,8 @@
 TC101: sorting store items alphabetically in ascending order
 
 PRECONDITIONS:
-1. browser opened on website https://www.saucedemo.com/
-2. user logged in
+1. user logged in
+2. browser opened on website https://www.saucedemo.com/inventory.html
 
 STEPS:
 1. click sort button
@@ -15,8 +15,8 @@ EXPECTED RESULTS:
 TC102: sorting store items alphabetically in descending order
 
 PRECONDITIONS:
-1. browser opened on website https://www.saucedemo.com/
-2. user logged in
+1. user logged in
+2. browser opened on website https://www.saucedemo.com/inventory.html
 
 STEPS:
 1. click sort button
@@ -29,8 +29,8 @@ EXPECTED RESULTS:
 TC103: sorting store items' prices in ascending order
 
 PRECONDITIONS:
-1. browser opened on website https://www.saucedemo.com/
-2. user logged in
+1. user logged in
+2. browser opened on website https://www.saucedemo.com/inventory.html
 
 STEPS:
 1. click sort button
@@ -43,8 +43,8 @@ EXPECTED RESULTS:
 TC104: sorting store items' prices in descending order
 
 PRECONDITIONS:
-1. browser opened on website https://www.saucedemo.com/
-2. user logged in
+1. user logged in
+2. browser opened on website https://www.saucedemo.com/inventory.html
 
 STEPS:
 1. click sort button
@@ -57,11 +57,11 @@ EXPECTED RESULTS:
 TC105: adding random store item to cart
 
 PRECONDITIONS:
-1. browser opened on website https://www.saucedemo.com/
-2. user logged in
+1. user logged in
+2. browser opened on website https://www.saucedemo.com/inventory.html
 
 STEPS:
-1. add random item from the store to cart
+1. add one random item from the store to cart
 2. click shopping cart button
 
 EXPECTED RESULTS:
