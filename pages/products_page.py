@@ -10,10 +10,6 @@ class ProductsPage(PrimaryHeader):
         super().__init__(driver)
         self.menu = self.driver.find_element(*PrimaryHeaderLocators.menu_btn)
         self.sort_button = Select(self.driver.find_element(*ProductsPageLocators.sort_btn))
-        self.sort_az = ProductsPageLocators.sort_az
-        self.sort_za = ProductsPageLocators.sort_za
-        self.sort_lo_hi = ProductsPageLocators.sort_lo_hi
-        self.sort_hi_lo = ProductsPageLocators.sort_hi_lo
         self.inventory = self.driver.find_elements(*ProductsPageLocators.store_item)
 
     def refresh_inventory(self):
@@ -25,8 +21,10 @@ class ProductsPage(PrimaryHeader):
             products.update({ProductsPage.get_item_name(item): ProductsPage.get_item_price(item)})
         return products
 
-    def sort_inventory(self, option):
-        self.sort_button.select_by_visible_text(option)
+    def sort_inventory(self, order="az"):
+        options = {"az": ProductsPageLocators.sort_az, "za": ProductsPageLocators.sort_za,
+                   "lo_hi": ProductsPageLocators.sort_lo_hi, "hi_lo": ProductsPageLocators.sort_hi_lo}
+        self.sort_button.select_by_visible_text(options[order])
 
     @staticmethod
     def add_to_cart(item):

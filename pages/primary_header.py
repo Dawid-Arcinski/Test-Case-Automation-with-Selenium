@@ -9,5 +9,4 @@ class PrimaryHeader(BasePage):
         self.shopping_cart_button = self.driver.find_element(*PrimaryHeaderLocators.shopping_cart_btn)
 
     def get_cart_counter(self):
-        pass
-
+        return int(self.shopping_cart_button.text)
