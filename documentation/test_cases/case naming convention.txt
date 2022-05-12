@@ -1,0 +1,5 @@
+Depending on site tested test case ids start with following numbers:
+
+0 - login page tests
+1 - main header tests
+2 - products page tests
