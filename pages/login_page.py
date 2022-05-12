@@ -1,6 +1,6 @@
 from pages.base_page import BasePage
 from pages.locators import LoginPageLocators
-
+from tools.test_tools import prepare_test_data
 
 class LoginPage(BasePage):
 
