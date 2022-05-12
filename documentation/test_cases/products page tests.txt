@@ -1,4 +1,4 @@
-TC101: sorting store items alphabetically in ascending order
+TC201: sorting store items alphabetically in ascending order
 
 PRECONDITIONS:
 1. user logged in
@@ -12,7 +12,7 @@ EXPECTED RESULTS:
 1. products are sorted alphabetically in ascending order
 
 
-TC102: sorting store items alphabetically in descending order
+TC202: sorting store items alphabetically in descending order
 
 PRECONDITIONS:
 1. user logged in
@@ -26,7 +26,7 @@ EXPECTED RESULTS:
 1. products are sorted alphabetically in descending order
 
 
-TC103: sorting store items' prices in ascending order
+TC203: sorting store items' prices in ascending order
 
 PRECONDITIONS:
 1. user logged in
@@ -40,7 +40,7 @@ EXPECTED RESULTS:
 1. products' prices are sorted in ascending order
 
 
-TC104: sorting store items' prices in descending order
+TC204: sorting store items' prices in descending order
 
 PRECONDITIONS:
 1. user logged in
@@ -54,7 +54,7 @@ EXPECTED RESULTS:
 1. products' prices are sorted in descending order
 
 
-TC105: adding random store item to cart
+TC205: products page adds correct item to cart
 
 PRECONDITIONS:
 1. user logged in
@@ -65,5 +65,5 @@ STEPS:
 2. click shopping cart button
 
 EXPECTED RESULTS:
-1. shopping cart badge displays "1"
-2. name of the product selected from the store corresponds to name of product in shopping cart
+1. name of the product selected from the store corresponds to name of product in shopping cart
+2. price of the product selected from the store corresponds to price of product in shopping cart
