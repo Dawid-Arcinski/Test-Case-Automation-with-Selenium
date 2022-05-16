@@ -1,4 +1,4 @@
-TC101: cart badge displays correct number
+TC101: cart badge displays correct number after adding item
 
 PRECONDITIONS:
 1. user logged in
@@ -6,8 +6,20 @@ PRECONDITIONS:
 
 STEPS:
 1. add one random item from the store to cart
-2. click shopping cart button
 
 EXPECTED RESULTS:
-1. name of the product selected from the store corresponds to name of product in shopping cart
-2. price of the product selected from the store corresponds to price of product in shopping cart
+1. shopping cart badge displays "1"
+
+
+TC102: cart badge disappears after removing item
+
+PRECONDITIONS:
+1. user logged in
+2. browser opened on website https://www.saucedemo.com/inventory.html
+
+STEPS:
+1. add one random item from the store to cart
+2. click "remove" button on previously selected item
+
+EXPECTED RESULTS:
+1. cart badge disappears
