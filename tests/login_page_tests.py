@@ -12,6 +12,7 @@ class LoginPageTest(BaseTest):
 
         PRECONDITIONS:
         1. browser opened on website https://www.saucedemo.com/
+        2. user is not logged in
 
         STEPS:
         1. enter correct username

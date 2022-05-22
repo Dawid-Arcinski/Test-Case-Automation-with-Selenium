@@ -9,6 +9,19 @@ from tests.base_test import BaseTest
 class PrimaryHeaderTest(BaseTest):
 
     def test_tc101_cart_badge_displays_correct_number_after_adding_item(self):
+        """
+        TC101: cart badge displays correct number after adding item
+
+        PRECONDITIONS:
+        1. user logged in
+        2. browser opened on website https://www.saucedemo.com/inventory.html
+
+        STEPS:
+        1. add one random item from the store to cart
+
+        EXPECTED RESULTS:
+        1. shopping cart badge displays "1"
+        """
         driver = self.driver
         login_page = LoginPage(driver)
         login_page.log_user_in(self.test_data["username"], self.test_data["password"])
@@ -19,6 +32,20 @@ class PrimaryHeaderTest(BaseTest):
         self.assertEqual(primary_header.get_cart_counter(), 1)
 
     def test_tc102_cart_badge_disappears_after_removing_item(self):
+        """
+        TC102: cart badge disappears after removing item
+
+        PRECONDITIONS:
+        1. user logged in
+        2. browser opened on website https://www.saucedemo.com/inventory.html
+
+        STEPS:
+        1. add one random item from the store to cart
+        2. click "remove" button on previously selected item
+
+        EXPECTED RESULTS:
+        1. cart badge disappears
+        """
         driver = self.driver
         login_page = LoginPage(driver)
         login_page.log_user_in(self.test_data["username"], self.test_data["password"])
