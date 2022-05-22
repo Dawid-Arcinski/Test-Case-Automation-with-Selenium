@@ -13,7 +13,7 @@ class BaseTest(unittest.TestCase):
         options = Options()
         options.headless = True
         self.driver = webdriver.Chrome(service=s, options=options)
-        self.driver.implicitly_wait(10)
+        self.driver.implicitly_wait(15)
         self.driver.get(self.test_data["base_url"])
 
     def tearDown(self):
