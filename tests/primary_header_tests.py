@@ -18,6 +18,7 @@ class PrimaryHeaderTest(BaseTest):
 
         STEPS:
         1. add one random item from the store to cart
+        2. check if shopping cart displays badge containing the number of added items
 
         EXPECTED RESULTS:
         1. shopping cart badge displays "1"
@@ -42,6 +43,7 @@ class PrimaryHeaderTest(BaseTest):
         STEPS:
         1. add one random item from the store to cart
         2. click "remove" button on previously selected item
+        3. check if shopping cart displays badge containing the number of added items
 
         EXPECTED RESULTS:
         1. cart badge disappears
